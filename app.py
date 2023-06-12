@@ -28,6 +28,7 @@ mysql.init_app(app)
 # Required
 
 
+@app.route('/')
 @app.route('/users')
 def users():
     cur = mysql.connection.cursor()
