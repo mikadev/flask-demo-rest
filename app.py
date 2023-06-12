@@ -1,3 +1,5 @@
+import json
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -31,7 +33,7 @@ def users():
     cur = mysql.connection.cursor()
     cur.execute('''SELECT* FROM users''')
     rv = cur.fetchall()
-    return str(rv[0]['email'])
+    return json.dumps(rv)
 
 
 @app.route('/data')
