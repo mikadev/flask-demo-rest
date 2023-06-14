@@ -1,2 +1,6 @@
 pip install -r requirements.txt
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/11602067518226-C-Program-Files-Python311-python-exe-can-t-open-file-C-Program-Errno-2-No-such-file-or-directory
+
+https://medium.com/globant/how-to-add-a-basic-unit-test-to-a-python-flask-app-using-pytest-79e61da76fc2
+https://medium.com/analytics-vidhya/how-to-test-flask-applications-aef12ae5181c
+https://github.com/pytest-dev/pytest-flask/blob/master/tests/test_json_response.py
