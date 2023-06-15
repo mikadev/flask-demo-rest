@@ -1,6 +1,6 @@
-from flask import Flask, jsonify
+from flask import jsonify
 
-app = Flask(__name__)
+from application import app, mysql
 
 data = [
     {
@@ -10,17 +10,6 @@ data = [
         "b": 2
     }
 ]
-
-from flask_mysqldb import MySQL
-
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'rest'
-app.config['MYSQL_PORT'] = 3308
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-mysql = MySQL()
-mysql.init_app(app)
 
 # Required
 
@@ -44,6 +33,10 @@ mysql.init_app(app)
     }
 ]
 """
+
+
+def compute(a, b):
+    return a + b
 
 
 @app.route('/')
