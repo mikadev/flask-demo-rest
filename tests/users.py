@@ -31,7 +31,16 @@ class TestUsers(unittest.TestCase):
         self.assertEquals(compute(1, 1), 2)
 
 
-"""
-@mock.patch('myslq.execute')
-def m():
-"""
+from unittest.mock import patch
+
+
+def multi(a, b):
+    return a * b
+
+
+@patch('application.server.compute', side_effect=lambda a, b: a * b * 2)
+def test(compute):
+    res = compute(2, 2)
+
+    # then
+    assert res == 8
